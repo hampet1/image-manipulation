@@ -1,3 +1,5 @@
+from app import app
+
 class Config(object):
     DEBUG = False
     TESTING = False
@@ -11,10 +13,10 @@ class ProductionConfig(Config):
 
 class DevelopmentConfig(Config):
     DEBUG = True
-    UPLOADS = 'C:/Users/hamro/Desktop/image_manipulation/app/app/static/images'
+    UPLOADS = app.root_path + 'static/images'
     SESSION_COOKIE_SECURE = False
     UPLOAD_FOLDER = "app/static/images/"
-    PROCESSED_IMAGE = 'C:/Users/hamro/Desktop/image_manipulation/app/app/static/images/'
+    PROCESSED_IMAGE = app.root_path + '/static/images'
     SEND_FILE_MAX_AGE_DEFAULT = 0
 
 

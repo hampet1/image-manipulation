@@ -13,14 +13,13 @@ from app import app
 ALLOWED_EXTENSIONS = ['pdf', 'tiff', 'jpg', 'jpeg', 'gif', 'png']
 
 filename="image.jpg"
+
 def delete_image_from_directory():
-    '''
+    """
     deleting old image every time after ruturning to home page
-    '''
+    """
     filename = "image.jpg"
-    print("filename is: ", filename)
-    print(app.instance_path)
-    image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+    image_path = app.config['UPLOAD_FOLDER'] + filename
     if os.path.isfile(image_path):
         os.remove(image_path)
 
