@@ -9,10 +9,6 @@ class Config(object):
 
 
 class ProductionConfig(Config):
-
-    def init_app(app):
-        Config.init_app(app)
-
     DEBUG = False
     UPLOADS = app.root_path + '\static\images'
     SESSION_COOKIE_SECURE = False
