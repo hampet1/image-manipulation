@@ -9,7 +9,17 @@ class Config(object):
 
 
 class ProductionConfig(Config):
-    pass
+
+    def init_app(app):
+        Config.init_app(app)
+
+    DEBUG = False
+    UPLOADS = app.root_path + '\static\images'
+    SESSION_COOKIE_SECURE = False
+    UPLOAD_FOLDER = "app\static\images/"
+    PROCESSED_IMAGE = app.root_path + '\static\images'
+
+
 
 
 class DevelopmentConfig(Config):
